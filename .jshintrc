@@ -1,0 +1,107 @@
+{
+
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "immed": true,
+    "indent": 4,
+    "latedef": "nofunc",
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "plusplus": false,
+    "quotmark": "single",
+    "undef": true,
+    "unused": false,
+
+    "globalstrict": false,
+    "strict": true,
+    "es3": false,
+    "esnext": false,
+
+    "trailing": true,
+
+    "maxparams": 10,
+    "maxdepth": 5,
+    "maxstatements": 25,
+    "maxcomplexity": 10,
+    "maxlen": 150,
+
+    "asi": false,
+    "boss": false,
+    "debug": false,
+    "eqnull": true,
+    "evil": false,
+    "expr": false,
+    "funcscope": false,
+    "iterator": false,
+    "lastsemic": false,
+    "laxbreak": false,
+    "laxcomma": false,
+    "loopfunc": false,
+    "moz": false,
+
+    "multistr":false,
+    "proto": false,
+    "scripturl": false,
+    "smarttabs":	false,
+    "shadow": false,
+
+    "sub": false,
+    "supernew": false,
+    "validthis": false,
+
+    "browser": true,
+    "devel": true,
+
+    "nomen": true,
+    "onevar": false,
+    "passfail": false,
+    "white": true,
+
+    "-W004": false, // var is already defined.
+    "-W027": false, // Unreachable 'AppCtrl' after 'return'.
+
+    "globals": {
+        "jQuery": true,
+        "$": true,
+        "$$": true,
+        "_": true,
+        "moment": true,
+        "require": true,
+        "exports": true,
+
+        "angular": true,
+        "module": true,
+        "app": true,
+        "$rootScope": true,
+
+        "jasmine": true,
+        "browser": true,
+        "describe": true,
+        "ddescribe": true,
+        "xdescribe": true,
+        "it": true,
+        "xit": true,
+        "iit": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "inject": true,
+        "expect": true,
+        "element": true,
+        "by": true,
+        "spyOn": true,
+        "protractor": true,
+        "global": true,
+        "Class": true,
+        "$injector": true,
+        "Modernizr": true,
+
+        "d3": true,
+
+        "rgba": true
+    }
+}

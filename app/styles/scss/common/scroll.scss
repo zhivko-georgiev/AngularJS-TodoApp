@@ -1,0 +1,37 @@
+::-webkit-scrollbar{
+  width: 9px;
+}
+::-webkit-scrollbar-track{
+  background-color: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: $grey7;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: $grey5;
+  }
+}
+
+.#{$namespace}-page-scroll{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 86vh;
+  padding-bottom: 175px;
+}
+
+.#{$namespace}-main-scroll{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 86vh;
+}
+
+.ta-scroll-window{
+  margin: 10px 0;
+  border: none;
+}
+
+.ta-toolbar{
+  margin: 10px 0;
+}

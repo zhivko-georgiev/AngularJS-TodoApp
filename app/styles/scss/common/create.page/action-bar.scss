@@ -1,0 +1,33 @@
+.#{$namespace}-view-navbar{
+  position: relative;
+  padding: 15px 0;
+  background: $grey12;
+  
+  .btn{
+    margin-top: -1px;
+  }
+
+  .#{$namespace}-autosave{
+    display: block;
+    font-size: 0.9em;
+    color: $grey4;
+    padding: 0px 15px;
+    margin-bottom: -4px;
+  }
+
+  .row{
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 0px;
+  }
+  
+  .#{$namespace}-button-wrapper{
+    float: right;
+    
+    li{
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+}

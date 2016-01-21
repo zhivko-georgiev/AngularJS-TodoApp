@@ -1,0 +1,16 @@
+.modal{
+  z-index:1040 !important;
+  background: rgba(0, 0, 0, 0.6);
+
+  .modal-dialog{
+    margin-top:180px;
+
+    .modal-body{
+      color: black;
+    }
+  }
+}
+
+.modal-backdrop{
+  display:none;
+}

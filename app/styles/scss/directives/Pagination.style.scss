@@ -1,0 +1,62 @@
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+
+  ul.pagination-sm{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    li{
+      margin: 5px 0;
+    }
+  }
+
+  .title{
+    display: inline-block;
+    margin-top: 30px;
+  }
+
+  > li > a{
+    color: $highlightB2;
+    // border-bottom: 1px dotted $highlightB3;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  > .pagination-sm > .active > a{
+    background-color: $highlightB2;
+    border-color: 1px dotted $highlightB3;
+  }
+
+  .btn{
+    padding-top: 5px;
+  }
+}
+
+.dropdown-pagination{
+  display: inline-block;
+  height: 33px;
+  margin: 20px;
+
+  .dropdown-toggle{
+    width: 56px;
+    height: 29px;
+    margin-top: 5px;
+
+    .caret{
+      margin-left: 10px;
+    }
+  }
+
+  ul.pagination-menu{
+    width: 56px;
+    min-width: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    li{
+      cursor: pointer;
+    }
+  }
+}

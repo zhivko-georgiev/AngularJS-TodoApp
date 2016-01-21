@@ -1,0 +1,88 @@
+html, body{
+  overflow-y: hidden;
+}
+
+.header{
+  display:table;
+  position: fixed;
+  width:100%;
+  border-bottom: 1px solid $grey7;
+  z-index: 2 !important; 
+}
+
+input{
+  outline: none;
+
+  &:focus{
+    &[type="radio"]{
+      outline: none;
+    }
+    &[type="checkbox"]{
+      outline: none;
+    }
+  }
+
+  &[type=checkbox]:hover{
+    cursor: pointer;
+  }
+}
+
+[placeholder]:focus::-webkit-input-placeholder{
+  transition: opacity 0.3s 0.3s ease;
+  opacity: 0;
+}
+
+ul,
+ol{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+a{
+  &, &:hover, a:focus{
+    text-decoration: none;
+  }
+}
+
+.#{$namespace}-main-content{
+  position: relative;
+}
+
+.#{$namespace}-top{
+  top:-1px;
+}
+
+.#{$namespace}-bottom{
+  bottom:-1px;
+}
+
+.multiple{
+  margin-right:6px;
+  
+  input{
+    float:left;
+  }
+}
+
+.container-fluid.main{
+  padding:0;
+}
+
+h4{
+  margin-top: 10px;
+}
+
+.glyphicon{
+  display: inline;
+
+  &.glyphicon-ok{
+    &:before{
+      content: url(../../../assets/images/questions/check_mark_dark.png);
+      position: absolute;
+      margin-left: 140px;
+      bottom: 1px;
+      display: inline;
+    }
+  }
+}

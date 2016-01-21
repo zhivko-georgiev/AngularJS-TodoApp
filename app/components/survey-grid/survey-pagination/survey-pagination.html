@@ -1,0 +1,24 @@
+<div ng-show = "!isEmptyList()" class="pagination">
+    <div class="title">Items per page</div>
+    <div class="btn-group dropdown-pagination" dropdown is-open="status.isopen" ng-click="isopen = false">
+        <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+            {{itemsPerPage}}<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pagination-menu" role="menu">
+            <li ng-repeat="item in getNumber(total) track by $index" ng-click="chooseValue(item)">
+                <a>{{item}}</a>
+            </li>
+        </ul>
+    </div>
+    <ul class="pagination pagination-sm" ng-show="pageCount() > 1">
+        <li>
+            <a href ng-click="toFirstPage()">«</a>
+        </li>
+        <li ng-repeat="n in range(pageCount()) track by $index" ng-class="{active: $index == currentPage}" ng-click="setPage($index)">
+            <a>{{$index+1}}</a>
+        </li>
+        <li>
+            <a href ng-click="toLastPage()">»</a>
+        </li>
+    </ul>
+</div>

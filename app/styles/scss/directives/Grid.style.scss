@@ -1,0 +1,171 @@
+.#{$namespace}-grid-container{
+  width:75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.#{$namespace}-search-name{
+  position: absolute;
+  top: 20px;
+  right: 12%;
+  min-width: 50px;
+}
+
+.#{$namespace}-table-input-name{
+  border-radius: 20px;
+  padding-left: 20px;
+  
+  &::-webkit-input-placeholder{
+    color: $grey7;
+  }
+}
+
+.#{$namespace}-table-head{
+  background-color: $grey12;
+  border: $grey12;
+}
+
+.#{$namespace}-table-link{
+  background-color: $grey12;
+  font-weight: normal;
+  margin-left: 10px;
+  color: $highlightB2;
+  border-bottom: 1px dotted $highlightB3;
+  text-decoration: none;
+  
+  &:hover{
+    border-bottom: none;
+    background-color: $grey12;
+    margin-left: 10px;
+    color: $lowlight6;
+  }
+}
+
+.#{$namespace}-tr-link{
+  background-color: transparent;
+  font-weight: normal;
+  margin-left: 10px;
+  color: $highlightB2;
+  visibility: hidden;
+  
+  &:before{
+    padding: 4px 0;
+    content: ' ';
+    margin-right: 15px;
+    border-left: 1px solid $grey10;
+  }
+}
+
+.selected{
+  border-bottom: none;
+  background-color: $grey12;
+  margin-left: 10px;
+  color: $lowlight6;
+}
+
+.#{$namespace}-table-main{
+  width: 100%;
+  margin-top: 15px;
+  @include font-arial;
+
+  tr{
+    td{
+      padding: 10px 15px;
+    }
+
+    th{
+      padding: 10px 15px;
+    }
+  } 
+  
+  > tbody > tr{
+    &:hover{
+      background-color: $grey11;
+      cursor: pointer;
+    }
+
+    &:first-child > td{
+      border-top: none;
+    }
+
+    &:last-child > td{
+      border-bottom: 1px solid $grey10;
+    }
+  }
+}
+
+.#{$namespace}-table-head-th{
+  vertical-align: middle !important;
+  border-bottom: none !important;
+  cursor: default;
+}
+
+.#{$namespace}-th-name:hover +.#{$namespace}-arrow-double{
+  visibility: visible;
+}
+
+.tr-action{
+  .survey-buidler-actions a{
+    visibility: hidden;
+    background-color: transparent;
+    float: right;
+    margin-right: 0;
+  }
+
+  &:hover .#{$namespace}-actions a{
+    background-color: transparent;
+    float: right;
+    visibility: visible;
+    margin-right: 0;
+  }
+}
+
+.#{$namespace}-table-head-link::before{
+  padding: 4px 0;
+  content: ' ';
+  margin-left: 65px;
+  border-left: 1px solid $grey10;
+}
+
+.tr-divider{
+  border-left:1px solid $grey10;
+  height: 25px;
+  position: absolute;
+  margin: -3px 0 0 -10px;
+}
+
+.#{$namespace}-hallo-container{
+  width: 100%;
+  margin-top: 15px;
+}
+
+.#{$namespace}-label-draft{
+  background-color: $grey7;
+  font-size: 85%;
+}
+
+
+.#{$namespace}-arrow-double{
+  visibility: hidden;
+  background: url(../../../assets/images/main/double_arrow.png);
+  padding: 7px 6px;
+  background-repeat: no-repeat;
+  background-position: 3px 9px;
+
+  &.#{$namespace}-arrow-up{
+    visibility: visible;
+    background: url(../../../assets/images/main/up_arrow.png);
+  }
+
+  &.#{$namespace}-arrow-down{
+    visibility: visible;
+    background: url(../../../assets/images/main/down_arrow.png);
+  }
+}
+
+.#{$namespace}-label-default{
+  background-color: $grey11;
+  position: relative;
+  padding-bottom: 3px;
+  border-radius: 3px;
+}

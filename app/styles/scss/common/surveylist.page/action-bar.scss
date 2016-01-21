@@ -1,0 +1,49 @@
+.row.#{$namespace}-div-gray{
+  background-color: $grey12;
+  height: 70px;
+  border-bottom: 1px solid $grey10;
+}
+
+.#{$namespace}-grid-container{
+  .#{$namespace}-dropdown-head{
+    position: absolute;
+    top: 20px;
+  }
+
+  .#{$namespace}-dropdown-btn-wrapper{
+    display:inline-block;
+    color:$grey12;
+  }
+
+  .#{$namespace}-dropdown-container{
+    display:inline-block;
+  }
+
+  .#{$namespace}-dropdown-btn-title{
+    background: $highlightA1;
+    display:inline-block;
+    margin:0 -5px 0  10px;
+    border-radius:2px;
+    border-bottom: 1px solid $highlightA2;
+  }
+
+  .#{$namespace}-dropdown-btn-title,
+  .#{$namespace}-dropdown-btn-caret{
+    padding:7px 10px 7px 10px;
+
+    &:hover{
+      background: $highlightA1;
+      cursor:pointer;
+    }
+  }
+
+  .#{$namespace}-dropdown-btn-caret{
+    background: $highlightA1;
+    border-left: 1px solid $grey12;
+    display:inline-block;
+    border-top-right-radius:2px;
+    border-bottom-right-radius:2px;
+    border-bottom: 1px solid $highlightA2;
+  }
+}
+

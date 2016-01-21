@@ -1,0 +1,60 @@
+/* darkest is at 0 - lightest at 13 */
+$grey0: #000000;
+$grey1: #121315;
+$grey2: #71777F;
+$grey3: #7F8388;
+$grey4: #8B9198;
+$grey5: #A3A4A5;
+$grey6: #ACB2B7;
+$grey7: #BDBEC0;
+$grey8: #C8CDD4;
+$grey9: lightgrey;
+$grey10: #DFE0E0;
+$grey11: #F0F5FD;
+$grey12: #F8F8F8;
+$grey13: #FFF;
+
+$lowlight1: #2C2D34;
+$lowlight2: #323844;
+$lowlight3: #39404C;
+$lowlight4: #404753;
+$lowlight5: #4F5B6B;
+$lowlight6: #676B71;
+
+$highlightA1: #4BACA7;
+$highlightA2: #418594;
+$highlightA3: #4EDFCF;
+$highlightA4: #43BCB0;
+
+$highlightB1: #00005A;
+$highlightB2: #5B97FB;
+$highlightB3: #82B0FD;
+
+/*///////////////semantic vars start////////////////////////*/
+
+$namespace: "survey-builder";
+
+$danger: #E13F3B;
+
+$navbar-bg: #2C2D34;
+$navbar-color: #A3A4A5;
+$navbar-brand-color: #BDBEC0;
+$navbar-brand-hover-color: #418594;
+$navbar-focus-bg: #121315;
+$navbar-focus-color: #43BCB0;
+
+$sidebar-bg: #404753;
+$sidebar-color: #DFE0E0;
+
+$question-default-padding: 14px 17px 30px 20px;
+$question-input-color: #000000;
+$question-input-border: 1px solid #A3A4A5;
+
+$grid-border: 1px dashed #ACB2B7;
+
+$btn-primary-bg: #43BCB0;
+$btn-primary-color: #ffffff;
+$btn-primary-shadow-color: #4BACA7;
+$btn-primary-border-color: #418594;
+$btn-primary-hover-bg: #4EDFCF;
+$btn-primary-hover-border-color: #43BCB0;

@@ -1,0 +1,99 @@
+.#{$namespace}-menu-wrapper .#{$namespace}-menu-icon{
+  background-image: url(../../../assets/images/main/surveyBuilder_logo.png);
+  background-repeat:no-repeat;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  background-position-y: 1px;
+}
+
+.navbar-brand{ 
+  padding-top: 12px;
+
+  &:hover{
+    cursor:pointer;
+  }
+  
+  a{
+    color: $navbar-brand-color;
+  }
+
+  a:hover{
+    color: $navbar-brand-hover-color;
+  }
+}
+
+.#{$namespace}-navbar-custom{
+  background: $navbar-bg;
+  margin-bottom:0;
+  border-radius:0;
+}
+
+.navbar-header .glyphicon{
+  padding: 0 10px 0 0;
+}
+
+.navbar h3{
+  display:inline;
+}
+
+.navbar-nav li{
+  border-left: 2px solid $navbar-focus-bg;
+
+  a{
+    color: $navbar-color;
+
+    &:hover{
+      background:none;
+    }
+
+    &:focus{
+      background: $navbar-focus-bg;
+    }
+  }
+
+  &:hover a{
+    color: $navbar-focus-color;
+    background: $navbar-focus-bg;
+    cursor: pointer;
+  }
+
+  &:focus a{
+    color: $navbar-focus-color;
+  }
+}
+
+.menu-wrapper{
+  width:100%;
+}
+
+.#{$namespace}-navbar-language{
+  margin: 12px 5px 5px 5px;
+  background-color: $navbar-bg;
+  border: 1px solid $navbar-color;
+  color: $navbar-color;
+  border-radius: 2px;
+  padding: 2px;
+  width: 28px;
+
+  &:focus{
+    outline: none;
+  }
+
+  &-ui-used, &-form-used{
+    border-color: transparent;
+    color: $navbar-bg;
+  }
+
+  &-ui-used{
+    background-color: $highlightB3;
+  }
+
+  &-form-used, &:hover{
+    background-color: $highlightA3;
+  }
+
+  &:hover{
+    color: $navbar-bg;
+    border-color: transparent;
+  }
+}

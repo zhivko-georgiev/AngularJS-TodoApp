@@ -1,0 +1,82 @@
+<div class="survey-builder-main-content">
+    <div class = "row survey-builder-div-gray">
+        &nbsp;
+    </div>
+    <div class="survey-builder-main-scroll">
+        <div class="survey-builder-grid-container">
+            <div class = "survey-builder-dropdown-container survey-builder-dropdown-head">
+                <div class = "survey-builder-dropdown-btn-wrapper">
+                    <div ng-click="createNewSurvey('survey')" class = "btn btn-primary capitalize">Create New Survey</div>
+                </div>
+            </div>
+            <div ng-if = "getListsLength() === 0" class="jumbotron survey-builder-hallo-container">
+                <h1>Create Survey</h1>
+                <p class="lead">Create Survey</p>
+            </div>
+            <div ng-show = "!isEmptyList()">
+                <div class="col-xs-2 survey-builder-search-name">
+                    <input class="form-control survey-builder-table-input-name" ng-change = "test(search.name)" placeholder="Search by survey name" ng-model="search.name">
+                </div>
+                <div>
+                    <table class="table table-hover survey-builder-table-main">
+                        <thead class="survey-builder-table-head">
+                        <tr>
+                            <th class="survey-builder-table-head-th">
+                                <span class="survey-builder-th-name" ng-click="columnFilterHandler('name', lists)">Surveys ({{results.length}})</span>
+                                <span class="survey-builder-arrow-double" ng-class = "{'survey-builder-arrow-down': isSortDown('name'), 'survey-builder-arrow-up': isSortUp('name')}"></span>
+                                    <span class="survey-builder-table-head-link">
+                                            <a class="survey-builder-table-link " ng-class="filterBy === 'All' ? 'selected' : ''" ng-click = "filterBy = 'All';">all</a>
+                                            <a class="survey-builder-table-link" ng-class="filterBy === 'Draft' ? 'selected' : ''" ng-click = "filterBy = 'Draft';">drafts</a>
+                                            <a class="survey-builder-table-link" ng-class="filterBy === 'Published' ? 'selected' : '' " ng-click = "filterBy = 'Published';">published</a>
+                                            <a class="survey-builder-table-link" ng-class="filterBy === 'Survey' ? 'selected' : '' " ng-click = "filterBy = 'Survey';">survey</a>
+                                            <a class="survey-builder-table-link" ng-class="filterBy === 'Form' ? 'selected' : '' " ng-click = "filterBy = 'Form';">form</a>
+                                    </span>
+                            </th>
+                            <th class="survey-builder-table-head-th">
+                                <span class="survey-builder-th-name" ng-click="columnFilterHandler('author', lists)">AUTHOR</span>
+                                <span class="survey-builder-arrow-double" ng-class = "{'survey-builder-arrow-down': isSortDown('author'), 'survey-builder-arrow-up': isSortUp('author')}"></span>
+                            </th>
+                            <th class="survey-builder-table-head-th">
+                                <span class="survey-builder-th-name" ng-click="columnFilterHandler('created', lists)">CREATED</span>
+                                <span class="survey-builder-arrow-double" ng-class = "{'survey-builder-arrow-down': isSortDown('created'), 'survey-builder-arrow-up': isSortUp('created')}"></span>
+                            </th>
+                            <th class="survey-builder-table-head-th">
+                                <span class="survey-builder-th-name" ng-click="columnFilterHandler('published', lists)">PUBLISHED</span>
+                                <span class="survey-builder-arrow-double" ng-class = "{'survey-builder-arrow-down': isSortDown('published'), 'survey-builder-arrow-up': isSortUp('published')}"></span>
+                            </th>
+                            <th class="survey-builder-table-head-th">
+                                <span class="survey-builder-th-name" ng-click="columnFilterHandler('type', lists)">TYPE</span>
+                                <span class="survey-builder-arrow-double" ng-class = "{'survey-builder-arrow-down': isSortDown('type'), 'survey-builder-arrow-up': isSortUp('type')}"></span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!---->
+                        <!---->
+                        <tr ng-repeat = "list in lists | filter:rowFilterHandler | filter:search:strict as results" class="tr-action"  ng-click = "previewSurvey(list.surveyId, list.type)">
+                            <td >
+                                <span>
+                                    {{list.name}}
+                                </span>
+                                <span class="survey-builder-actions" ng-click = "$event.stopPropagation(); createFromExist(list.surveyId, list.type)" >
+                                    <a class="survey-builder-tr-link">use for new survey</a>
+                                </span>
+                            </td>
+                            <!--<td class="actions">-->
+                            <!--<a href="#" class="survey-builder-table-link survey-builder-tr-link"><div class="tr-divider"></div>Use for new survey</a>-->
+                            <!--</td>-->
+                            <td>{{list.author}}</td>
+                            <td>{{list.created}}</td>
+                            <td ng-if="list.isPublished" ng-show="filterBy !== 'Draft'">{{list.published}}</td>
+                            <td ng-if="!list.isPublished" ng-show="filterBy !== 'Published'"><span class="label label-default survey-builder-label-draft">draft</span></td>
+                            <td>list.type</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <survey-pagination></survey-pagination>
+
+            </div>
+        </div>
+</div>
