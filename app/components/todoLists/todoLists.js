@@ -7,26 +7,33 @@
 
     function todoLists() {
         var directive = {
-            templateUrl: './states/todoLists/todoLists.html',
+            templateUrl: './components/todoLists/todoLists.html',
             restrict: 'E',
-             controller: controller
+            controller: controller
         };
         return directive;
     }
 
     /** @ngInject */
-    function controller($scope) {
+    function controller($scope, todoAppStorage) {
         $scope.isTodoListInputHidden = true;
         $scope.newTodoListName = '';
 
         $scope.addTodoList = function() {
             $scope.isTodoListInputHidden = false;
-
             var newTodoListName = $scope.newTodoListName;
 
             if (newTodoListName !== '') {
-                 // return todoLists.addList(newTodoListName);
-                
+                var todosInStore = todoAppStorage.todoListTodos(newTodoListName);
+
+                if (todosInStore === null) {
+                    todosInStore = [];
+                }
+
+                todosInStore = $scope.todos;
+
+                todoAppStorage.addTodoList(newTodoListName, todosInStore);
+
             }
         };
     }

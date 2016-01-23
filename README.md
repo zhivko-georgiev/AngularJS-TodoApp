@@ -1,6 +1,6 @@
 # angularBase
 
-Base Angular enviroment which makes is easy to start a new project.
+Base Angular enviroment which makes it easy to start a new project.
 
 ## Installation
 - Install on your computer: Node.js

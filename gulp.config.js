@@ -20,6 +20,8 @@ module.exports = function () {
         ],
         images: [],
         js: [
+            './app/app.js',
+            './app/states/**/*.js',
             './app/**/*.js',
             '!./app/vendor/**/*.js' +
             ''],

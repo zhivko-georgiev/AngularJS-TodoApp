@@ -8,7 +8,7 @@
 
     function todo() {
         var directive = {
-            templateUrl: './states/todo/todo.html',
+            templateUrl: './components/todo/todo.html',
             restrict: 'E',
             controller: controller
         };
@@ -16,9 +16,10 @@
         return directive;
     }
 
+ 
     /** @ngInject */
-    function controller($scope, localStorageService) {
-        var todosInStore = localStorageService.get('todos'),
+    function controller($scope, localStorageService, todoAppStorage) {
+        var todosInStore = todoAppStorage.todoListTodos($scope.todoListName),
             todo = todo || '',
             todos = todosInStore || [];
 
@@ -27,7 +28,7 @@
         
 
         $scope.$watch('todos', function() {
-            localStorageService.set('todos', todos);
+            todoAppStorage.addTodosToList($scope.todoListName, todos);
         }, true);
 
         $scope.addTodo = function() {
