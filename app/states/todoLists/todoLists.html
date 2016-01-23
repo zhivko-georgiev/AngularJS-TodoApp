@@ -1,0 +1,15 @@
+<h2 class="text-center">SIMPLE TODO LISTS</h2>
+<todo></todo>
+<div class="row text-center">
+   <div class="col-md-offset-4 col-md-4">
+      <div class="form-group" ng-hide="isTodoListInputHidden">
+         <label for="todoListName">New TODO List Name:</label>
+         <input type="text" class="form-control" id="todoListName" ng-model="newTodoListName">
+      </div>
+   </div>
+</div>
+<div class="text-center">
+   <button class="btn btn-primary" ng-click="addTodoList()">
+   <span class="glyphicon glyphicon-plus"></span> Add TODO List
+   </button>
+</div>

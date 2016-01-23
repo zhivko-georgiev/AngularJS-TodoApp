@@ -1,18 +1,11 @@
-(function (angular) {
+(function () {
     'use strict';
 
-    angular.module('app', ['ui.router'])
-    .config(config)
-    .run(run);
+    angular.module('todoApp', ['ui.router'])
+    .config(routeConfig);
 
-    config.$inject = ['$urlRouterProvider'];
-    function config($urlRouterProvider) {
+    /** @ngInject */
+    function routeConfig($urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
     }
-
-    run.$inject = [];
-    function run() {
-        
-    }
-
-})(angular);
+})();

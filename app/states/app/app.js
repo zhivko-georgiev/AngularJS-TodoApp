@@ -1,11 +1,25 @@
-(function (angular) {
+(function() {
     'use strict';
 
     angular
-        .module('app')
-        .directive('app', app);
+        .module('todoApp', ['ui.router', 'ui.sortable', 'LocalStorageModule'])
+        .directive('todoApp', todoApp)
+        .config(config);
 
-    function app() {
+
+    /** @ngInject */
+    function config($stateProvider, localStorageServiceProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/',
+                template: '<todo-app></todo-app>'
+            });
+
+        localStorageServiceProvider.setPrefix('ls');
+    }
+
+
+    function todoApp() {
         var directive = {
             templateUrl: './states/app/app.html',
             restrict: 'E'
@@ -13,4 +27,4 @@
         return directive;
     }
 
-}(angular));
+}());
