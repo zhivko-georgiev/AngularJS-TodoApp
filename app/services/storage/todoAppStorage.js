@@ -15,26 +15,21 @@
         };
 
         function todoListTodos(todoListName) {
-            var todosInStore = localStorageService.get(todoListName);
-
-            if (todosInStore === null) {
-                todosInStore = [];
-            }
-
-            return todosInStore;
-
+            return localStorageService.get(todoListName) || [];
         }
 
         function addTodoList(newTodoListName, todos) {
-            localStorageService.set(newTodoListName, todos);
+            var todoListFound = _.indexOf(getAllTodoListsNames(), newTodoListName);
+
+            if (todoListFound === -1) {
+                localStorageService.set(newTodoListName, todos);
+            } else {
+                // TODO: Indicate somehow that such entry exists.
+            }
         }
 
         function addTodosToList(todoListName, todos) {
-            var todosInStore = localStorageService.get(todoListName);
-
-             if (todosInStore === null) {
-                todosInStore = [];
-            }
+            var todosInStore = localStorageService.get(todoListName) || [];
 
             todosInStore = todos;
 

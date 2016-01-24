@@ -8,8 +8,7 @@ module.exports = function () {
          */
         build: './dist/',
         css: [
-            app + 'styles/surveyViewer.css',
-            app + 'styles/surveyBuilder.css',
+            app + 'styles/*.css',
             temp + '**/*.css'
         ],
         devBaseUrl: 'http://localhost',
