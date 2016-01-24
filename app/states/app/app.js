@@ -15,7 +15,7 @@
                 template: '<todo-app></todo-app>'
             });
 
-        localStorageServiceProvider.setPrefix('ls');
+        localStorageServiceProvider.setPrefix('todoApp');
     }
 
 

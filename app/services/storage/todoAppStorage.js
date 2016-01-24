@@ -10,7 +10,8 @@
         return {
             todoListTodos: todoListTodos,
             addTodoList: addTodoList,
-            addTodosToList: addTodosToList
+            addTodosToList: addTodosToList,
+            getAllTodoListsNames: getAllTodoListsNames
         };
 
         function todoListTodos(todoListName) {
@@ -38,6 +39,10 @@
             todosInStore = todos;
 
             localStorageService.set(todoListName, todosInStore);
+        }
+
+        function getAllTodoListsNames() {
+            return localStorageService.keys();
         }
     }
 }());

@@ -3,12 +3,12 @@
 
     angular
         .module('todoApp')
-        .directive('todo', todo);
+        .directive('todos', todos);
 
 
-    function todo() {
+    function todos() {
         var directive = {
-            templateUrl: './components/todo/todo.html',
+            templateUrl: './components/todos/todos.html',
             restrict: 'E',
             controller: controller
         };
@@ -22,20 +22,25 @@
         var todosInStore = todoAppStorage.todoListTodos($scope.todoListName),
             todo = todo || '',
             todos = todosInStore || [];
-
+            
         $scope.todo = todo;
         $scope.todos = todos;
         
-
         $scope.$watch('todos', function() {
             todoAppStorage.addTodosToList($scope.todoListName, todos);
         }, true);
 
         $scope.addTodo = function() {
+            var todoToBeSaved = {};
+
             if ($scope.todo.length === 0) {
                 return;
             }
-            $scope.todos.push($scope.todo);
+
+            todoToBeSaved['value'] = $scope.todo;
+            todoToBeSaved['done'] = false;
+
+            $scope.todos.push(todoToBeSaved);
             $scope.todo = '';
         };
 

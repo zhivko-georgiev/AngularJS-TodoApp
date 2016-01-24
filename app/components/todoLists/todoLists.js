@@ -30,10 +30,7 @@
                     todosInStore = [];
                 }
 
-                todosInStore = $scope.todos;
-
                 todoAppStorage.addTodoList(newTodoListName, todosInStore);
-
             }
         };
     }
