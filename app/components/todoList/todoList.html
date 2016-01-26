@@ -1,0 +1,5 @@
+<div class="jumbotron">
+	<h2 class="text-center">{{data.id}}</h2>
+	<h2 class="text-center">{{data.name}}</h2>
+	<todo data="todo" ng-repeat="todo in data.todos track by $index"></todo>
+</div>

@@ -18,7 +18,8 @@
     function controller($scope, todoAppStorage) {
         $scope.isTodoListInputHidden = true;
         $scope.newTodoListName = '';
-
+        $scope.todoLists = todoAppStorage.todoLists;
+        
         $scope.addTodoList = function() {
             $scope.isTodoListInputHidden = false;
             var newTodoListName = $scope.newTodoListName;
