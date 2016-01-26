@@ -28,7 +28,7 @@
         $scope.notEditable = true;
 
         $scope.$watch('todos', function() {
-            todoAppStorage.addTodosToList($scope.todoListName, todos);
+            todoAppStorage.addTodoToList($scope.todoListName, todos);
         }, true);
 
         $scope.hoverIn = function() {

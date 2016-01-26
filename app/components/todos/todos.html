@@ -1,16 +1,6 @@
 <div class="jumbotron" ng-model="todoListName">
    <!-- Todos input -->
-   <form role="form" ng-submit="addTodo()">
-      <div class="row">
-         <p class="input-group">
-            <span class="input-group-addon glyphicon glyphicon-plus green" ng-click="addTodo()"></span>
-            <input type="text" ng-model="todo" placeholder="Start typing here to create a task..." class="form-control">
-            <span class="input-group-btn">
-            <input type="submit" class="btn btn-success" value="Add Task">
-            </span>
-         </p>
-      </div>
-   </form>
+   
    <!-- Todos list -->
    <div>
       <div ui-sortable ng-model="todos">

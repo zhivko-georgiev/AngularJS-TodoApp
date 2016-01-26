@@ -1,5 +1,16 @@
 <div class="jumbotron">
-	<h2 class="text-center">{{data.id}}</h2>
-	<h2 class="text-center">{{data.name}}</h2>
-	<todo data="todo" ng-repeat="todo in data.todos track by $index"></todo>
+   <form role="form" ng-submit="addTodoToList()">
+      <div class="row">
+         <p class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-plus green" ng-click="addTodoToList()"></span>
+            <input type="text" ng-model="todo" placeholder="Start typing here to create a task..." class="form-control">
+            <span class="input-group-btn">
+            <input type="submit" class="btn btn-success" value="Add Task">
+            </span>
+         </p>
+      </div>
+   </form>
+   <h2 class="text-center">{{data.id}}</h2>
+   <h2 class="text-center">{{data.name}}</h2>
+   <todo data="todo" ng-repeat="todo in data.todos track by $index"></todo>
 </div>

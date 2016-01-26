@@ -13,8 +13,7 @@
         return {
             todoListTodos: todoListTodos,
             addTodoList: addTodoList,
-            addTodosToList: addTodosToList,
-            getAllTodoListsNames: getAllTodoListsNames,
+            addTodoToList: addTodoToList,
             todoLists: todoLists
         };
 
@@ -24,9 +23,9 @@
         }
 
         function addTodoList(newTodoListName) {
-            var allLists = todoLists;
-            var lastElement = _.last(allLists);
-            var foundExistingName = undefined;
+            var allLists = todoLists,
+            lastElement = _.last(allLists),
+            foundExistingName;
 
             if (lastElement === undefined) {
                 allLists.push({
@@ -53,16 +52,17 @@
             }
         }
 
-        function addTodosToList(todoListName, todos) {
-            var todosInStore = localStorageService.get(todoListName) || [];
+        function addTodoToList(todoListName, todo) {
+            var newListTodos = todoListTodos(todoListName)[0].todos;
+            newListTodos.push(todo);
 
-            todosInStore = todos;
+            for (var todoList in todoLists) {
+                if (todoList.name === todoListName) {
+                    todoList.todos = newListTodos;
+                }
+            }
 
-            localStorageService.set(todoListName, todosInStore);
-        }
-
-        function getAllTodoListsNames() {
-            return localStorageService.keys();
+            localStorageService.set("todoApp", todoLists);
         }
     }
 }());
