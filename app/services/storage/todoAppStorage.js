@@ -7,14 +7,15 @@
 
     /** @ngInject */
     function service(localStorageService) {
-        var todoLists = localStorageService.get("todoApp") || [];
+        var todoLists = localStorageService.get('todoApp') || [];
         todoLists = _.isString(todoLists) ? JSON.parse(todoLists) : todoLists;
 
         return {
             todoListTodos: todoListTodos,
             addTodoList: addTodoList,
             addTodoToList: addTodoToList,
-            todoLists: todoLists
+            todoLists: todoLists,
+            saveTodoListWithTodos: saveTodoListWithTodos
         };
 
         function todoListTodos(todoListName) {
@@ -34,7 +35,7 @@
                     todos: []
                 });
 
-                localStorageService.set("todoApp", allLists);
+                localStorageService.set('todoApp', allLists);
             } else {
                 foundExistingName = _.find(allLists, {
                     'name': newTodoListName
@@ -47,7 +48,7 @@
                         todos: []
                     });
 
-                    localStorageService.set("todoApp", allLists);
+                    localStorageService.set('todoApp', allLists);
                 }
             }
         }
@@ -62,7 +63,11 @@
                 }
             }
 
-            localStorageService.set("todoApp", todoLists);
+            localStorageService.set('todoApp', todoLists);
+        }
+
+        function saveTodoListWithTodos(todoListName, todos) {
+            localStorageService.set('todoApp', todos);
         }
     }
 }());

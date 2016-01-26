@@ -37,7 +37,7 @@
         };
 
         $scope.removeTodo = function(index) {
-            $scope.todos.splice(index, 1);
+            todosInStore.splice(index, 1);
         };
 
         $scope.editTodo = function(index) {
