@@ -12,7 +12,8 @@
             restrict: 'E',
             controller: controller,
             scope: {
-                data: '='
+                data: '=',
+                todoListName: '='
             }
         };
 
@@ -36,8 +37,8 @@
             $scope.notEditable = true;
         };
 
-        $scope.removeTodo = function(index) {
-            todosInStore.splice(index, 1);
+        $scope.removeTodo = function() {
+            todoAppStorage.removeTodoFromList($scope.todoListName, $scope.data);
         };
 
         $scope.editTodo = function(index) {

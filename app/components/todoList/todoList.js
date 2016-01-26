@@ -19,7 +19,7 @@
 
     /** @ngInject */
     function controller($scope, todoAppStorage) {
-       
+
          $scope.addTodoToList = function() {
             var todoListName = $scope.data.name,
             todoToBeSaved = {};
