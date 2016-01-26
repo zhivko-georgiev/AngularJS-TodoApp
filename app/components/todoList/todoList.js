@@ -19,10 +19,7 @@
 
     /** @ngInject */
     function controller($scope, todoAppStorage) {
-        $scope.isTodoListInputHidden = true;
-        $scope.newTodoListName = '';
-        $scope.todoLists = todoAppStorage.todoLists;
-
+       
          $scope.addTodoToList = function() {
             var todoListName = $scope.data.name,
             todoToBeSaved = {};

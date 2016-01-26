@@ -24,14 +24,8 @@
     function controller($scope, localStorageService, todoAppStorage) {
         var todosInStore = todoAppStorage.todoListTodos($scope.data) || [];
 
-
-
-
+        $scope.hideButtons = true;
         $scope.notEditable = true;
-
-        // $scope.$watch('todos', function() {
-        //     todoAppStorage.addTodosToList($scope.todoListName, todos);
-        // }, true);
 
         $scope.hoverIn = function() {
             $scope.hideButtons = false;
