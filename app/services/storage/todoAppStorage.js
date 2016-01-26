@@ -55,6 +55,12 @@
 
         function addTodoToList(todoListName, todo) {
             var newListTodos = todoListTodos(todoListName)[0].todos;
+            var todoExists = _.find(newListTodos, {'value': todo.value});
+
+            if (todoExists !== undefined) {
+                return;
+            }
+
             newListTodos.push(todo);
 
             for (var todoList in todoLists) {
