@@ -1,7 +1,15 @@
-.green {
+.greenPlus {
     color: green;
 }
 
 .strike {
     text-decoration: line-through;
+}
+
+.panel-heading-colored {
+	background-color: #4673B1;
+}
+
+.panel-heading-value {
+	color: white;
 }

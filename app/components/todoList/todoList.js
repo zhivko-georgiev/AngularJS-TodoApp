@@ -32,6 +32,8 @@
             todoToBeSaved.done = false;
 
             todoAppStorage.addTodoToList(todoListName, todoToBeSaved);
+
+            $scope.todo = '';
         };
     }
 }());

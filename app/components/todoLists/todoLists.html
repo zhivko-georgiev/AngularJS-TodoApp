@@ -1,4 +1,7 @@
 <h2 class="text-center">SIMPLE TODO LISTS</h2>
+<div ng-repeat="list in todoLists track by $index">
+   <todo-list data="list"></todo-list>
+</div>
 <div class="row text-center">
    <div class="col-md-offset-4 col-md-4">
       <div class="form-group" ng-hide="isTodoListInputHidden">
@@ -8,11 +11,7 @@
    </div>
 </div>
 <div class="text-center">
-   <button class="btn btn-primary" ng-click="addTodoList()">
+   <button class="btn btn-primary btn-lg" ng-click="addTodoList()">
    <span class="glyphicon glyphicon-plus"></span> Add TODO List
    </button>
-</div>
-
-<div ng-repeat="list in todoLists track by $index">
-	<todo-list data="list"></todo-list>
 </div>
