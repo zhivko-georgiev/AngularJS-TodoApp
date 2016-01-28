@@ -15,7 +15,9 @@
             addTodoList: addTodoList,
             addTodoToList: addTodoToList,
             todoLists: todoLists,
-            removeTodoFromList: removeTodoFromList
+            removeTodoFromList: removeTodoFromList,
+            changeTodoStatus: changeTodoStatus,
+            updateTodoValue: updateTodoValue
         };
 
         function todoListTodos(todoListName) {
@@ -61,6 +63,12 @@
                 return;
             }
 
+            if (newListTodos.length === 0) {
+                todo.id = 1;
+            } else {
+                todo.id = _.last(newListTodos).id + 1;
+            }
+
             newListTodos.push(todo);
 
             for (var todoList in todoLists) {
@@ -84,6 +92,44 @@
             for(var list in allLists) {
                 if (list.name === todoListName) {
                     list.todos = storedListTodos;
+                }
+            }
+
+            localStorageService.set('todoApp', allLists);
+        }
+
+        function changeTodoStatus(todoListName, todoId) {
+            var listTodos = todoListTodos(todoListName),
+                allLists = todoLists;
+
+            for(var todo in listTodos) {
+                if (todo.id === todoId) {
+                    todo.done = !todo.done;
+                }
+            }
+
+            for(var list in allLists) {
+                if (list.name === todoListName) {
+                    list.todos = listTodos;
+                }
+            }
+
+            localStorageService.set('todoApp', allLists);
+        }
+
+        function updateTodoValue(todoListName, todoId, newTodoValue) {
+            var listTodos = todoListTodos(todoListName),
+                allLists = todoLists;
+
+            for(var todo in listTodos) {
+                if (todo.id === todoId) {
+                    todo.value = newTodoValue;
+                }
+            }
+
+            for(var list in allLists) {
+                if (list.name === todoListName) {
+                    list.todos = listTodos;
                 }
             }
 

@@ -1,8 +1,10 @@
-<p class="input-group" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-style="hoverStyle">
-   <span class="input-group-addon"><input type="checkbox" ng-model="data.done"></span>
-   <input type="text" ng-model="data.value" class="form-control" ng-class="{strike: data.done}" ng-readonly="notEditable">
-   <span class="input-group-addon glyphicon glyphicon-pencil" ng-hide="hideButtons" ng-click="editTodo($index)">
+<p class="input-group" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+   <span class="input-group-addon"><input type="checkbox" ng-model="data.done" ng-click="changeTodoStatus()"></span>
+   <input type="text" ng-model="data.value" class="form-control" ng-class="{strike: data.done}" ng-readonly="notEditable" ng-focus="focusOnInput">
+   <span class="input-group-addon glyphicon glyphicon-pencil" ng-hide="hideButtons" ng-click="editTodo()">
    </span>
    <span class="input-group-addon glyphicon glyphicon-remove" ng-hide="hideButtons" ng-click="removeTodo()">
+   </span>
+  	<span class="input-group-addon glyphicon glyphicon-floppy-save" ng-hide="hideSaveButton" ng-click="updateTodo()">
    </span>
 </p>

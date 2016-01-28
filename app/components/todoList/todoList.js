@@ -22,13 +22,14 @@
 
          $scope.addTodoToList = function() {
             var todoListName = $scope.data.name,
+            todoValue = $scope.todo,
             todoToBeSaved = {};
 
-            if ($scope.todo.length === 0) {
+            if (todoValue === undefined || todoValue.length === 0) {
                 return;
             }
 
-            todoToBeSaved.value = $scope.todo;
+            todoToBeSaved.value = todoValue;
             todoToBeSaved.done = false;
 
             todoAppStorage.addTodoToList(todoListName, todoToBeSaved);

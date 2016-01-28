@@ -23,10 +23,15 @@
 
     /** @ngInject */
     function controller($scope, localStorageService, todoAppStorage) {
-        var todosInStore = todoAppStorage.todoListTodos($scope.data) || [];
+        var todosInStore = todoAppStorage.todoListTodos($scope.data) || [],
+            todoId = $scope.data.id,
+            todoValue = $scope.data.value,
+            todoListName = $scope.todoListName,
+            todo = $scope.data;
 
         $scope.hideButtons = true;
         $scope.notEditable = true;
+        $scope.hideSaveButton = true;
 
         $scope.hoverIn = function() {
             $scope.hideButtons = false;
@@ -35,14 +40,27 @@
         $scope.hoverOut = function() {
             $scope.hideButtons = true;
             $scope.notEditable = true;
+            $scope.hideSaveButton = true;
         };
 
         $scope.removeTodo = function() {
-            todoAppStorage.removeTodoFromList($scope.todoListName, $scope.data);
+            todoAppStorage.removeTodoFromList(todoListName, todo);
         };
 
-        $scope.editTodo = function(index) {
+        $scope.editTodo = function() {
+            $scope.hideButtons = true;
+            
+            $scope.hideSaveButton = false;
             $scope.notEditable = false;
+           
+        };
+
+        $scope.changeTodoStatus = function() {
+            todoAppStorage.changeTodoStatus(todoListName, todoId);
+        };
+
+        $scope.updateTodo = function() {
+            todoAppStorage.updateTodoValue(todoListName, todoId, todoValue);
         };
     }
 })();

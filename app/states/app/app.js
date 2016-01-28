@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('todoApp', ['ui.router', 'ui.sortable', 'LocalStorageModule'])
+        .module('todoApp', ['ui.router', 'ui.sortable', 'LocalStorageModule', 'ui.bootstrap', 'cgPrompt'])
         .directive('todoApp', todoApp)
         .config(config);
 
