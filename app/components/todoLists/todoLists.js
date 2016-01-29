@@ -23,10 +23,10 @@
             var newTodoListName = '';
 
             prompt({
-                title: 'Give me a name',
+                title: 'Give me a todo list name',
                 message: 'What would you like to name it?',
                 input: true,
-                label: 'Name',
+                label: 'Todo List Name',
                 value: ''
             }).then(function(newTodoListName) {
                 if (newTodoListName !== '') {

@@ -17,7 +17,9 @@
             todoLists: todoLists,
             removeTodoFromList: removeTodoFromList,
             changeTodoStatus: changeTodoStatus,
-            updateTodoValue: updateTodoValue
+            updateTodoValue: updateTodoValue,
+            updateTodoList: updateTodoList,
+            removeTodoList: removeTodoList
         };
 
         function todoListTodos(todoListName) {
@@ -135,5 +137,30 @@
 
             localStorageService.set('todoApp', allLists);
         }
+
+        function updateTodoList(todoListId, newTodoListName) {
+            var allLists = todoLists;
+
+            for(var list in allLists) {
+                if (list.id === todoListId) {
+                    list.name = newTodoListName;
+                }
+            }
+
+            localStorageService.set('todoApp', allLists);
+
+        };
+
+        function removeTodoList(todoListId) {
+            var allLists = todoLists;
+
+            console.log(todoListId);
+
+            _.remove(allLists, function(l) {
+                return l.id === todoListId;
+            });
+
+            localStorageService.set('todoApp', allLists);
+        };
     }
 }());

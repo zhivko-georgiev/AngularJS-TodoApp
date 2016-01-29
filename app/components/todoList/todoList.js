@@ -19,11 +19,20 @@
 
     /** @ngInject */
     function controller($scope, todoAppStorage) {
+        $scope.hideEditRemoveButtons = true;
+        $scope.editMode = false;
+
+        $scope.hoverIn = function() {
+            $scope.hideEditRemoveButtons = false;
+        };
+
+        $scope.hoverOut = function() {
+            $scope.hideEditRemoveButtons = true;
+        };
 
          $scope.addTodoToList = function() {
-            var todoListName = $scope.data.name,
-            todoValue = $scope.todo,
-            todoToBeSaved = {};
+            var todoValue = $scope.todo,
+                todoToBeSaved = {};
 
             if (todoValue === undefined || todoValue.length === 0) {
                 return;
@@ -32,9 +41,23 @@
             todoToBeSaved.value = todoValue;
             todoToBeSaved.done = false;
 
-            todoAppStorage.addTodoToList(todoListName, todoToBeSaved);
+            todoAppStorage.addTodoToList($scope.data.name, todoToBeSaved);
 
             $scope.todo = '';
+        };
+
+        $scope.editTodoList = function() {
+            $scope.editMode = true;
+        };
+
+        $scope.updateTodoListName = function() {
+            todoAppStorage.updateTodoList($scope.data.id, $scope.data.name);
+
+            $scope.editMode = false;
+        };
+
+        $scope.removeTodoList = function() {
+             todoAppStorage.removeTodoList($scope.data.id);
         };
     }
 }());

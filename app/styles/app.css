@@ -10,6 +10,22 @@
 	background-color: #4673B1;
 }
 
+.panel-heading {
+	font-size: 22px;
+}
+
 .panel-heading-value {
 	color: white;
+}
+
+.input-cursor {
+	cursor: pointer;
+}
+
+.error-message {
+	color: red;
+}
+
+.glyphicon {
+	position: static;
 }
