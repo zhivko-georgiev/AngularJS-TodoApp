@@ -1,7 +1,7 @@
 <div class="jumbotron">
    <div class="panel panel-default">
       <div class="panel-heading-colored">
-         <div class="panel-heading" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+         <div class="panel-heading" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-class="{'input-cursor' : !editMode}">
             <span class="glyphicon glyphicon-calendar"></span>
             <span class="panel-heading-value" ng-if="!editMode">{{data.name}}</span>
             <input type="text" ng-if="editMode" ng-model="data.name">

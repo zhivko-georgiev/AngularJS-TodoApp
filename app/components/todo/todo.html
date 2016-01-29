@@ -1,6 +1,6 @@
 <p class="input-group" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
    <span class="input-group-addon"><input type="checkbox" ng-model="data.done" ng-click="changeTodoStatus()"></span>
-   <input type="text" ng-model="data.value" class="form-control" ng-class="{'input-cursor' : !editMode}" ng-readonly="!editMode">
+   <input type="text" ng-model="data.value" class="form-control" ng-class="{'strike': data.done, 'input-cursor' : !editMode}"  ng-readonly="!editMode">
    <span class="input-group-addon glyphicon glyphicon-pencil" ng-if="!hideEditRemoveButtons && !editMode" ng-click="editTodo()">
    </span>
    <span class="input-group-addon glyphicon glyphicon-remove" ng-if="!hideEditRemoveButtons && !editMode" ng-click="removeTodo()">

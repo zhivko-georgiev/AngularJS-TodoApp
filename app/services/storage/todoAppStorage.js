@@ -154,8 +154,6 @@
         function removeTodoList(todoListId) {
             var allLists = todoLists;
 
-            console.log(todoListId);
-
             _.remove(allLists, function(l) {
                 return l.id === todoListId;
             });
