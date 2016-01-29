@@ -149,7 +149,7 @@
 
             localStorageService.set('todoApp', allLists);
 
-        };
+        }
 
         function removeTodoList(todoListId) {
             var allLists = todoLists;
@@ -161,6 +161,6 @@
             });
 
             localStorageService.set('todoApp', allLists);
-        };
+        }
     }
 }());
